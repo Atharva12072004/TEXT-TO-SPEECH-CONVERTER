@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-to-Speech Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Text-to-Speech Converter</h1>
+        
+        <textarea id="text-input" placeholder="Enter text here..."></textarea>
+        <div class="input-with-mic"></div>
+        <div class="input-mic">
+            <img src="./images/mic.png" id="mic" alt="Mic" onclick="startSpeechRecognition()">
+        </div>
+        
+        <input type="text" id="language-search" placeholder="Search for language..." onkeyup="filterLanguages()">
+        <select id="language-select">
+            <!-- Languages will be populated by JavaScript -->
+        </select>
+        <p id="selected-language-display">Selected Language: None</p> <!-- Display selected language -->
+        
+        <!-- Speed Control Slider -->
+        <label for="speed-range">Speed: <span id="speed-value">1.0</span>x</label>
+        <input type="range" id="speed-range" min="0.5" max="2" step="0.1" value="1">
+        
+        <div class="controls">
+            <button id="speak-btn">Listen</button>
+            <button id="pause-btn">Pause</button>
+        </div>
+        
+        <!-- <audio id="audio" controls></audio>
+        <div class="progress-container">
+            <div id="progress-bar"></div>
+        </div> -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
